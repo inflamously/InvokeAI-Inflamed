@@ -197,3 +197,11 @@ installer/install.bat
 installer/install.sh
 installer/update.bat
 installer/update.sh
+
+# Custom
+autoimport
+configs
+databases
+invokeai.yaml
+models
+outputs
