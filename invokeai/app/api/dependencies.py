@@ -17,6 +17,7 @@ from invokeai.app.services.session_queue.session_queue_sqlite import SqliteSessi
 from invokeai.app.services.urls import LocalUrlService
 from invokeai.backend.util.logging import InvokeAILogger
 from invokeai.version.invokeai_version import __version__
+from ..services.categories import CategoryService
 
 from ..services.default_graphs import create_system_graphs
 from ..services.graph import GraphExecutionState, LibraryGraph
@@ -28,6 +29,9 @@ from ..services.invoker import Invoker
 from ..services.latent_storage import DiskLatentsStorage, ForwardCacheLatentsStorage
 from ..services.model_manager_service import ModelManagerService
 from ..services.processor import DefaultInvocationProcessor
+from ..services.prompts_categories_storage import CategoryStorage
+from ..services.prompts import PromptsService
+from ..services.prompts_storage import PromptsStorage
 from ..services.sqlite import SqliteItemStorage
 from ..services.thread import lock
 from .events import FastAPIEventService
@@ -127,11 +131,29 @@ class ApiDependencies:
             )
         )
 
+        prompts = PromptsService(
+            PromptsStorage(
+                db_location,
+                logger,
+            ),
+            logger
+        )
+
+        categories = CategoryService(
+            CategoryStorage(
+                db_location,
+                logger
+            ),
+            logger
+        )
+
         services = InvocationServices(
             model_manager=ModelManagerService(config, logger),
             events=events,
             latents=latents,
             images=images,
+            prompts=prompts,
+            categories=categories,
             boards=boards,
             board_images=board_images,
             queue=MemoryInvocationQueue(),

@@ -4,6 +4,7 @@ import ParamPositiveConditioning from 'features/parameters/components/Parameters
 import ParamSDXLConcatButton from './ParamSDXLConcatButton';
 import ParamSDXLNegativeStyleConditioning from './ParamSDXLNegativeStyleConditioning';
 import ParamSDXLPositiveStyleConditioning from './ParamSDXLPositiveStyleConditioning';
+import ParamPromptInflameArea from 'features/promptInflame/components/Parameters/PromptInflame/ParamPromptInflameArea';
 
 export default function ParamSDXLPromptArea() {
   return (
@@ -13,6 +14,7 @@ export default function ParamSDXLPromptArea() {
         gap: 2,
       }}
     >
+      <ParamPromptInflameArea />
       <ParamPositiveConditioning />
       <ParamSDXLConcatButton />
       <ParamSDXLPositiveStyleConditioning />

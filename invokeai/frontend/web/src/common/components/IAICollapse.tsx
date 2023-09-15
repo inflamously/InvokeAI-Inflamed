@@ -9,11 +9,11 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PropsWithChildren, memo } from 'react';
+import { PropsWithChildren, memo, ReactElement } from 'react';
 import { mode } from 'theme/util/mode';
 
 export type IAIToggleCollapseProps = PropsWithChildren & {
-  label: string;
+  label: string | ReactElement;
   activeLabel?: string;
   defaultIsOpen?: boolean;
 };

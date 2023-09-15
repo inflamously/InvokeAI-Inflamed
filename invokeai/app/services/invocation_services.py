@@ -3,6 +3,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from invokeai.app.services.categories import EntityServiceABC
+from invokeai.app.services.entity import EntityExampleABC
+
 if TYPE_CHECKING:
     from logging import Logger
 
@@ -21,6 +24,7 @@ if TYPE_CHECKING:
     from invokeai.app.services.model_manager_service import ModelManagerServiceBase
     from invokeai.app.services.session_processor.session_processor_base import SessionProcessorBase
     from invokeai.app.services.session_queue.session_queue_base import SessionQueueBase
+    from invokeai.app.services.prompts import PromptsServiceABC
 
 
 class InvocationServices:
@@ -34,6 +38,8 @@ class InvocationServices:
     graph_execution_manager: "ItemStorageABC[GraphExecutionState]"
     graph_library: "ItemStorageABC[LibraryGraph]"
     images: "ImageServiceABC"
+    prompts: EntityServiceABC | EntityExampleABC
+    categories: EntityServiceABC
     latents: "LatentsStorageBase"
     logger: "Logger"
     model_manager: "ModelManagerServiceBase"
@@ -55,6 +61,8 @@ class InvocationServices:
         images: "ImageServiceABC",
         latents: "LatentsStorageBase",
         logger: "Logger",
+        prompts: EntityServiceABC | EntityExampleABC,
+        categories: EntityServiceABC,
         model_manager: "ModelManagerServiceBase",
         processor: "InvocationProcessorABC",
         performance_statistics: "InvocationStatsServiceBase",
@@ -70,6 +78,8 @@ class InvocationServices:
         self.graph_execution_manager = graph_execution_manager
         self.graph_library = graph_library
         self.images = images
+        self.prompts = prompts
+        self.categories = categories
         self.latents = latents
         self.logger = logger
         self.model_manager = model_manager

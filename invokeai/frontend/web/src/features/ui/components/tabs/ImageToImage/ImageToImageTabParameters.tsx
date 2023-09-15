@@ -6,10 +6,12 @@ import ParamPromptArea from 'features/parameters/components/Parameters/Prompt/Pa
 import ParamSymmetryCollapse from 'features/parameters/components/Parameters/Symmetry/ParamSymmetryCollapse';
 import { memo } from 'react';
 import ImageToImageTabCoreParameters from './ImageToImageTabCoreParameters';
+import ParamPromptInflameArea from 'features/promptInflame/components/Parameters/PromptInflame/ParamPromptInflameArea';
 
 const ImageToImageTabParameters = () => {
   return (
     <>
+      <ParamPromptInflameArea />
       <ParamPromptArea />
       <ImageToImageTabCoreParameters />
       <ParamControlNetCollapse />

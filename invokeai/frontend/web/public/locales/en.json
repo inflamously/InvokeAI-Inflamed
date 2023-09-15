@@ -285,6 +285,20 @@
         "disableSucceeded": "Invocation Cache Disabled",
         "disableFailed": "Problem Disabling Invocation Cache"
     },
+    "promptInflame": {
+        "editor": "Editor",
+        "promptPanel": "Prompt Inflame",
+        "prompt": {
+            "add": "Prompt add",
+            "addDescriptionSuccess": "Your prompt was saved successfully",
+            "apply": "Prompt applied",
+            "applyDescription": "Your prompt was applied"
+        },
+        "toolbar": {
+            "categoryPlaceholder": "Category",
+            "categoryAdd": "Add Category"
+        }
+    },
     "gallery": {
         "allImagesLoaded": "All Images Loaded",
         "assets": "Assets",

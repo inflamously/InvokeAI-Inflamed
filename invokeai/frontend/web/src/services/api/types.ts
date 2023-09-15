@@ -237,3 +237,8 @@ export type TypeGuardFor<T extends TypeGuard<any>> = T extends TypeGuard<
 >
   ? U
   : never;
+
+export type QueryDTO = {
+  page: number;
+  page_size: number;
+};
