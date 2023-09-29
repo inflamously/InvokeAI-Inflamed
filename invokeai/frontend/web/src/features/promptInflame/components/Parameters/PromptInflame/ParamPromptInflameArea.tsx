@@ -143,6 +143,10 @@ const ParamPromptInflameArea = (_: unknown) => {
     }
   };
 
+  const handlePromptDelete = async () => {
+    await refetchPrompts();
+  };
+
   return (
     <IAICollapse
       label={
@@ -162,6 +166,7 @@ const ParamPromptInflameArea = (_: unknown) => {
         <PromptInflameContent
           prompts={prompts}
           onApplyPrompt={handleApplyPrompt}
+          onPromptDelete={async () => await handlePromptDelete()}
         />
       </Box>
       <Flex

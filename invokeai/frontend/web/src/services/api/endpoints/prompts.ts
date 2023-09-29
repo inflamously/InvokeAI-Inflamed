@@ -65,6 +65,12 @@ export const promptApi = api.injectEndpoints({
         body: prompt,
       }),
     }),
+    deletePrompt: build.mutation<void, number>({
+      query: (prompt_key) => ({
+        url: `/prompts/${prompt_key}`,
+        method: 'DELETE',
+      }),
+    }),
   }),
 });
 
@@ -72,4 +78,5 @@ export const {
   useGetExamplePromptQuery,
   useGetPromptsQuery,
   useStorePromptMutation,
+  useDeletePromptMutation,
 } = promptApi;
