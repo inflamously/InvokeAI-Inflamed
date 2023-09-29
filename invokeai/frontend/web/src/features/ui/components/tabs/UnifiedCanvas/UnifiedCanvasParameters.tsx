@@ -13,7 +13,6 @@ import ParamPromptInflameArea from 'features/promptInflame/components/Parameters
 const UnifiedCanvasParameters = () => {
   return (
     <>
-      <ParamPromptInflameArea />
       <ParamPromptArea />
       <UnifiedCanvasCoreParameters />
       <ParamControlNetCollapse />

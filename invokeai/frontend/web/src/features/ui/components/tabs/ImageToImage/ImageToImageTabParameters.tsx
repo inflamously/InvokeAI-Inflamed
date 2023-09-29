@@ -11,7 +11,6 @@ import ParamPromptInflameArea from 'features/promptInflame/components/Parameters
 const ImageToImageTabParameters = () => {
   return (
     <>
-      <ParamPromptInflameArea />
       <ParamPromptArea />
       <ImageToImageTabCoreParameters />
       <ParamControlNetCollapse />
