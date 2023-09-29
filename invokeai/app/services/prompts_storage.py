@@ -120,6 +120,7 @@ class PromptsStorage(StorageABC):
                 _sql_delete_prompt(),
                 storage.filter_entries((query_entry,))
             )
+            self._conn.commit()
 
     def __init__(self, db_location, logger: Logger):
         self._lock = threading.Lock()
